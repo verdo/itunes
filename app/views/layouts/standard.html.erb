@@ -1,0 +1,29 @@
+<html>
+<head><title>Hello from Mark's famous itunes Program.....</title>
+<h4> <%= link_to image_tag("goodbye.jpg") %>Mark's Famous iTunes Web Page</p></h4>
+	<%= stylesheet_link_tag 'standard', :media => "all", :style => "text/css", 
+	:href => "/stylesheets/hello.css" %>
+	</head>
+<body>
+
+<body bgcolor="lavender">
+<%= yield :layout %>
+
+<p> <font size="1"> It is illegal to copy content from this site. Plagarism is severely condoned.</font> </p>
+
+</body>
+<p> Would you like to go to the 
+<%= link_to 'add song page', :controller => "add", :action => "song" %> or 
+<%= link_to 'buy song page',  :controller => "buy", :action => "song"  %>
+</p>
+<p>
+<p> Would you like to go to the Display pages?
+<%= link_to 'Show actors', :controller => "show", :action => "actor" %> or
+<%= link_to 'Show albums', :controller => "show", :action => "album" %> or
+<%= link_to 'Show songs', :controller => "show", :action => "list_song" %>
+</p>
+<p> Are you ready to quit?
+    <%= link_to 'Goodbye',  :controller => "goodbye", :action => "actor_wave", :id => "Grace"  %>
+
+</p>
+</html>

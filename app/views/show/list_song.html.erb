@@ -1,0 +1,33 @@
+<h1>Song Listing</h1>
+<% form_tag :action => 'list_song' do %>
+  <p> Give me your name: </p> 
+	<%= text_field_tag 'viewer' %>
+      <%= submit_tag 'send' %>
+<% end %>
+
+
+<% if params[:viewer] then %>
+
+<ul>
+	<%if @actor %>
+	<% if @actor.status =='Buyer' then %>
+		<% @songs.each do |song| %>
+			<li> <%=h song.title %> by <%=h song.artist %>, in  <%=h song.in_album %> : <%=h song.id %> 
+	 		[Owned by Actor ID <%=h song.actor_id %>] </li>
+	  	<% end %>
+	 <% elsif @actor.status == 'Admin' then %>
+	 	<% @arr.each do |arr| %>
+			<li> <%=h arr %>
+		<% end %>
+	<% end %>	
+	<% else %>
+	<h3> You are not a registered Buyer or Admin </h3> 
+	<% end %>
+
+</ul>
+<% else %>
+	<% @arr.each do |arr| %>
+			<li> <%=h arr %>
+		<% end %>
+<% end %>
+

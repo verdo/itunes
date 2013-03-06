@@ -1,0 +1,7 @@
+<h1>Songs owned by you <%=h params[:owner] %>:</h1>
+	<ul> 
+			<% @buyer_songs.each do |song| %>
+			<li> From the album <%=h song.in_album %>, the song <%=h song.title %> by <%=h song.artist %> </li>
+		<% end %>
+	 </ul>
+
